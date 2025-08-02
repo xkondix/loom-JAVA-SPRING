@@ -1,11 +1,11 @@
-package com.kowalczyk.konrad.loom.examples;
+package com.kowalczyk.konrad.loom.virtual;
 
 
 import java.time.ZonedDateTime;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
 
-
+//https://openjdk.org/jeps/444
 public class CreationOfVirtualThread {
 
     public static void main(String[] args) {

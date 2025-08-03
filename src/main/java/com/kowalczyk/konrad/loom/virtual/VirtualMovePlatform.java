@@ -4,7 +4,11 @@ import java.util.concurrent.Executors;
 
 public class VirtualMovePlatform {
 
-    public static void main(String[] args) { //VM option -Djdk.virtualThreadScheduler.parallelism=2
+    /**
+     * <a href="https://openjdk.org/jeps/444">...</a>
+     * VM option -Djdk.virtualThreadScheduler.parallelism=2
+     */
+    public static void main(String[] args) {
 
         Runnable task1 = () -> {
             System.out.println("Task 1 start on - " + Thread.currentThread());

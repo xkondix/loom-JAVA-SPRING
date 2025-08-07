@@ -3,6 +3,7 @@ package com.kowalczyk.konrad.loom.virtual.pinning;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
+import java.nio.charset.StandardCharsets;
 import java.util.concurrent.Executors;
 
 public class PinningDatagram {
@@ -19,8 +20,15 @@ public class PinningDatagram {
                 DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
                 System.out.println("Waiting to receive UDP packet... " + Thread.currentThread());
                 socket.receive(packet); // Pinning
-                System.out.println("Received on" + Thread.currentThread() + " data - " + new String(packet.getData()));
+                String received = new String(
+                        packet.getData(),
+                        packet.getOffset(),
+                        packet.getLength(),
+                        StandardCharsets.UTF_8
+                );
+                System.out.println("Received on " + Thread.currentThread() + " data - " + received);
                 Thread.sleep(5000);
+                System.out.println("after sleep " + Thread.currentThread() + " data - " + received);
             } catch (IOException | InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -29,6 +37,5 @@ public class PinningDatagram {
         try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
             executor.submit(task);
         }
-
     }
 }

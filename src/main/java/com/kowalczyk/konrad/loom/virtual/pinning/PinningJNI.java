@@ -34,7 +34,6 @@ public class PinningJNI {
 
         Runnable task = () -> {
             try {
-                Thread.sleep(2000);
                 System.out.println("task 1 - " + Thread.currentThread());
                 PinningJNI.nativeSleep();
                 Thread.sleep(2000);
@@ -46,7 +45,6 @@ public class PinningJNI {
 
         Runnable task2 = () -> {
             try {
-                Thread.sleep(2000);
                 System.out.println("task 2 - " + Thread.currentThread());
                 PinningJNI.nativeSleep2();
                 Thread.sleep(2000);
@@ -58,7 +56,6 @@ public class PinningJNI {
 
         Runnable task3 = () -> {
             try {
-                Thread.sleep(2000);
                 System.out.println("task 3 - " + Thread.currentThread());
                 PinningJNI.nativeBlock(LOCK);
                 Thread.sleep(2000);

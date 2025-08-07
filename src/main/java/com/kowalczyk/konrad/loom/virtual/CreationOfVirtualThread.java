@@ -1,13 +1,15 @@
-package com.kowalczyk.konrad.loom.examples;
+package com.kowalczyk.konrad.loom.virtual;
 
 
 import java.time.ZonedDateTime;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
 
-
 public class CreationOfVirtualThread {
 
+    /**
+     * <a href="https://openjdk.org/jeps/444">...</a>
+     */
     public static void main(String[] args) {
 
         // Way 1

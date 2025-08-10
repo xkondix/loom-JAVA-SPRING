@@ -23,9 +23,9 @@ public class DataInitializer {
     @PostConstruct
     public void initData() {
         if (cityRepository.count() == 0) {
-            City katowice = cityRepository.save(new City("Katowice", 50.2599, 19.0216));
-            City milan = cityRepository.save(new City("Milan", 45.4642, 9.1900));
-            City amsterdam = cityRepository.save(new City("Amsterdam", 52.3676, 4.9041));
+            City katowice = cityRepository.save(new City("Katowice", 50.2584, 19.0275));
+            City milan = cityRepository.save(new City("Milan", 45.4643, 9.1895));
+            City amsterdam = cityRepository.save(new City("Amsterdam", 52.374, 4.8897));
 
             if (userRepository.count() == 0) {
                 userRepository.saveAll(List.of(

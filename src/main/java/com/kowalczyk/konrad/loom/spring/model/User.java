@@ -1,8 +1,14 @@
 package com.kowalczyk.konrad.loom.spring.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class User {
 
     @Id
@@ -13,24 +19,8 @@ public class User {
     @JoinColumn(name = "city_id")
     private City city;
 
-    public User() {
-    }
-    public User(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
     public User(String name, City city) {
         this.name = name;
         this.city = city;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public City getCity() {
-        return city;
-    }
-
 }

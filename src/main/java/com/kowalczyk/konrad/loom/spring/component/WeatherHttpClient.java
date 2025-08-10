@@ -62,7 +62,8 @@ public class WeatherHttpClient {
             JsonNode root = mapper.readTree(json);
             JsonNode temps = root.path("hourly").path("temperature_2m");
             if (temps.isArray() && !temps.isEmpty()) {
-                return STR."\{temps.get(0).asDouble()}°C";
+//                return STR."\{temps.get(0).asDouble()}°C"; preview
+                return temps.get(0).asDouble() + "°C";
             }
             return "No temperature data";
         } catch (Exception e) {

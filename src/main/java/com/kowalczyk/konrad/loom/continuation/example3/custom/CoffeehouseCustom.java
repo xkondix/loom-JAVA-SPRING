@@ -5,6 +5,10 @@ import java.util.concurrent.CountDownLatch;
 import static com.kowalczyk.konrad.loom.continuation.example3.CoffeehouseUtil.*;
 
 public class CoffeehouseCustom {
+
+    /**
+     * VM options --enable-preview --add-exports java.base/jdk.internal.vm=ALL-UNNAMED
+     */
     public static final CustomVirtualThreadScheduler SCHEDULER = new CustomVirtualThreadScheduler();
 
     public static void main(String[] args) {

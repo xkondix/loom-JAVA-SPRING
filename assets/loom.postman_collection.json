@@ -1,0 +1,62 @@
+{
+	"info": {
+		"_postman_id": "cd7afd9c-c726-42a2-8e4a-3dbd6ec6f695",
+		"name": "loom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get CompletableFuture",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/weather?name=Konrad Kowalczyk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Konrad Kowalczyk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Virtual",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/weather/virtual?name=Konrad Kowalczyk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"weather",
+						"virtual"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Konrad Kowalczyk"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

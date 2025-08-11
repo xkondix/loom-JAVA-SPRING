@@ -4,6 +4,10 @@ import jdk.internal.vm.Continuation;
 import jdk.internal.vm.ContinuationScope;
 
 public class ContinuationExample2 {
+
+    /**
+     * VM options --enable-preview --add-exports java.base/jdk.internal.vm=ALL-UNNAMED
+     */
     private static final ContinuationScope SCOPE = new ContinuationScope("shopping");
 
     public static void main(String[] args) throws InterruptedException {

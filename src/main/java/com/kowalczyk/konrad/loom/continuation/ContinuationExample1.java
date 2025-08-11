@@ -4,6 +4,10 @@ import jdk.internal.vm.Continuation;
 import jdk.internal.vm.ContinuationScope;
 
 public class ContinuationExample1 {
+
+    /**
+     * VM options --enable-preview --add-exports java.base/jdk.internal.vm=ALL-UNNAMED
+     */
     public static void main(String[] args) {
         Continuation cont = getSimpleContinuation();
         cont.run();
@@ -20,7 +24,7 @@ public class ContinuationExample1 {
             Continuation.yield(scope);
             System.out.println("B");
         });
-    return continuation;
+        return continuation;
     }
 
 }

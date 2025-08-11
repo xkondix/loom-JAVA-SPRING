@@ -1,7 +1,5 @@
 package com.kowalczyk.konrad.loom.continuation.example3;
 
-import com.kowalczyk.konrad.loom.continuation.example3.custom.CustomWaitingOperation;
-
 import java.util.Random;
 
 public class CoffeehouseUtil {

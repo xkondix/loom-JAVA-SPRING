@@ -10,6 +10,4 @@ public class PlatformWaitingOperation {
             throw new RuntimeException(e);
         }
     }
-
-
 }

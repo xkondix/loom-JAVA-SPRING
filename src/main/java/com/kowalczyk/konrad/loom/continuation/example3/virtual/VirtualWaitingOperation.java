@@ -10,6 +10,4 @@ public class VirtualWaitingOperation {
             throw new RuntimeException(e);
         }
     }
-
-
 }

@@ -10,14 +10,14 @@ public class CoffeehouseCustom {
      * VM options --enable-preview --add-exports java.base/jdk.internal.vm=ALL-UNNAMED
      */
     public static final CustomVirtualThreadScheduler SCHEDULER = new CustomVirtualThreadScheduler();
+    public static final int CUSTOMER_COUNT = 100;
 
     public static void main(String[] args) {
         new Thread(SCHEDULER::start).start();
-        int customerCount = 100;
         long startTime = System.nanoTime();
-        CountDownLatch latch = new CountDownLatch(customerCount);
+        CountDownLatch latch = new CountDownLatch(CUSTOMER_COUNT * 2);
 
-        for (int i = 0; i < customerCount; i++) {
+        for (int i = 0; i < CUSTOMER_COUNT; i++) {
             SCHEDULER.schedule(createCustomerThread("Coffeehouse Katowice", latch));
             SCHEDULER.schedule(createCustomerThread("Coffeehouse Amsterdam", latch));
         }
@@ -33,7 +33,7 @@ public class CoffeehouseCustom {
 
         long endTime = System.nanoTime();
         long durationMillis = (endTime - startTime) / 1_000_000;
-        System.out.println("Wątki zakończone. Czas wykonania: " + durationMillis + " ms");
+        System.out.println("Threads completed. Execution time: " + durationMillis + " ms");
     }
 
     public static CustomVirtualThread createCustomerThread(String coffeehouse, CountDownLatch latch) {

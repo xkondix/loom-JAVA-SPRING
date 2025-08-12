@@ -31,7 +31,7 @@ public class CoffeehouseVirtual {
 
         long endTime = System.nanoTime();
         long durationMillis = (endTime - startTime) / 1_000_000;
-        System.out.println("Wątki zakończone. Czas wykonania: " + durationMillis + " ms");
+        System.out.println("Threads completed. Execution time: " + durationMillis + " ms");
     }
 
     public static Runnable createCustomerThread(String coffeehouse, CountDownLatch latch) {
